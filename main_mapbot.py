@@ -780,6 +780,26 @@ async def sosAttendAccept(ctx, arg):
 
 
 
+
+
+#image generation by @a_person_that_exists1 (KaasKroket)
+@bot.group("image",invoke_without_command=True)
+async def image(ctx):
+    await ctx.send("Command tree 'image'\nA really cool function by @KaasKroket which generates images on DB given an image.\n```'//image apply (drone width) (drone height) (blocks to exclude)'\nGenerates an image.```")
+
+@image.command("apply")
+async def img_apply(ctx,droneW,droneH,toExclude):
+    await ctx.send("This would be the output? no ideia.{} {} {}".format(droneW,droneH,toExclude))
+
+
+
+
+
+
+
+
+
+
 bot.run(')
 
 
