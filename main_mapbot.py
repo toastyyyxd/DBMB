@@ -790,6 +790,15 @@ async def image(ctx):
 @image.command("apply")
 async def img_apply(ctx,droneW,droneH,toExclude):
     await ctx.send("This would be the output? no ideia.{} {} {}".format(droneW,droneH,toExclude))
+    if not ctx.message.attachments:
+        await ctx.send("You didn't provide any file.")
+    else:
+        await ctx.channel.typing()
+        await ctx.message.attachments[0].save("outputs/temp_file_404.png")
+        
+        #Do stuff
+        
+        await ctx.send("Aftermath:", file=discord.File("outputs/temp_file_404.png"))
 
 
 
